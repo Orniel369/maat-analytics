@@ -1,0 +1,33 @@
+---
+// src/pages/en/index.astro — English version
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import Filosofie from '../../components/Filosofie.astro';
+import Diensten from '../../components/Diensten.astro';
+import Portfolio from '../../components/Portfolio.astro';
+import Werkwijze from '../../components/Werkwijze.astro';
+import Over from '../../components/Over.astro';
+import Samenwerken from '../../components/Samenwerken.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Ma'at Analytics — Data & AI Bureau"
+  description="AI agents, dashboards and data strategy for Dutch SME businesses. No sales pitch, results within 4 weeks."
+  lang="en"
+>
+  <Nav lang="en" />
+  <main>
+    <Hero lang="en" />
+    <Filosofie lang="en" />
+    <Diensten lang="en" />
+    <Portfolio lang="en" />
+    <Werkwijze lang="en" />
+    <Over lang="en" />
+    <Samenwerken lang="en" />
+    <Contact lang="en" />
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

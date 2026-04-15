@@ -1,0 +1,87 @@
+---
+// src/components/Footer.astro
+interface Props {
+  lang?: 'nl' | 'en';
+}
+const { lang = 'nl' } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">Ma'at <em>Analytics</em></span>
+      <p class="footer-tagline">
+        {lang === 'nl'
+          ? 'Data & AI Bureau · Eindhoven'
+          : 'Data & AI Bureau · Eindhoven'}
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/privacy.html">{lang === 'nl' ? 'Privacyverklaring' : 'Privacy Policy'}</a>
+      <span>·</span>
+      <a href="/voorwaarden.html">{lang === 'nl' ? 'Algemene Voorwaarden' : 'Terms of Service'}</a>
+    </div>
+
+    <p class="footer-copy">
+      © {new Date().getFullYear()} Ma'at Analytics
+    </p>
+  </div>
+</footer>
+
+<style>
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-name {
+  font-family: var(--ff-head);
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  color: rgba(240,235,226,0.4);
+}
+.footer-name em { color: var(--gold); font-style: italic; }
+
+.footer-tagline {
+  font-family: var(--ff-mono);
+  font-size: 0.42rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,235,226,0.2);
+  margin-top: 0.3rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-mono);
+  font-size: 0.44rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,235,226,0.2);
+}
+.footer-links a { transition: color 0.2s; }
+.footer-links a:hover { color: rgba(201,169,110,0.6); }
+
+.footer-copy {
+  font-family: var(--ff-mono);
+  font-size: 0.42rem;
+  letter-spacing: 0.18em;
+  color: rgba(240,235,226,0.15);
+}
+
+@media (max-width: 768px) {
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
